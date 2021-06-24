@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rasl/ITMO_Projects/Rubik/Cube/Field.h
+vector
+-
+
+/home/rasl/ITMO_Projects/Rubik/main.cpp
+iostream
+-
+Cube/Field.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Field.h
+typeinfo
+-
+

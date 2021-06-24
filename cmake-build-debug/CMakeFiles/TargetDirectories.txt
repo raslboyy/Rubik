@@ -1,0 +1,3 @@
+/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles/gen_algo.dir
