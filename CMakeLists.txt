@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
-project(gen_algo)
+project(Rubik)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(gen_algo main.cpp Cube/Field.cpp Cube/Field.h Cube/Cube.cpp Cube/Cube.h)
+add_executable(Rubik main.cpp Cube/Field.h Cube/Cube.h Cube/Field.cpp Cube/Cube.cpp)
+target_link_libraries(Rubik -lglut -lGL -lGLU)

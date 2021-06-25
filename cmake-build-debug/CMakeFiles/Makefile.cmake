@@ -46,5 +46,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/gen_algo.dir/DependInfo.cmake"
+  "CMakeFiles/Rubik.dir/DependInfo.cmake"
   )

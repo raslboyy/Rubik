@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="gen_algo"/>
+		<Option title="Rubik"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
@@ -12,16 +12,6 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/rasl/ITMO_Projects/Rubik/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -37,30 +27,18 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="gen_algo">
-				<Option output="/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/gen_algo" prefix_auto="0" extension_auto="0"/>
+			<Target title="rebuild_cache">
 				<Option working_dir="/home/rasl/ITMO_Projects/Rubik/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 gen_algo"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="gen_algo/fast">
-				<Option output="/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/gen_algo" prefix_auto="0" extension_auto="0"/>
+			<Target title="Rubik">
+				<Option output="/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Rubik" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/rasl/ITMO_Projects/Rubik/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -75,7 +53,29 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 gen_algo/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 Rubik"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Rubik/fast">
+				<Option output="/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Rubik" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rasl/ITMO_Projects/Rubik/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 Rubik/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -83,19 +83,19 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp">
-			<Option target="gen_algo"/>
+			<Option target="Rubik"/>
 		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h">
-			<Option target="gen_algo"/>
+			<Option target="Rubik"/>
 		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Field.cpp">
-			<Option target="gen_algo"/>
+			<Option target="Rubik"/>
 		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Field.h">
-			<Option target="gen_algo"/>
+			<Option target="Rubik"/>
 		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/main.cpp">
-			<Option target="gen_algo"/>
+			<Option target="Rubik"/>
 		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

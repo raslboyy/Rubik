@@ -75,17 +75,6 @@ CMAKE_BINARY_DIR = /home/rasl/ITMO_Projects/Rubik/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/152/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -96,6 +85,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/snap/clion/152/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named gen_algo
+# Target rules for targets named Rubik
 
 # Build rule for target.
-gen_algo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gen_algo
-.PHONY : gen_algo
+Rubik: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Rubik
+.PHONY : Rubik
 
 # fast build rule for target.
-gen_algo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/build
-.PHONY : gen_algo/fast
+Rubik/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/build
+.PHONY : Rubik/fast
 
 Cube/Cube.o: Cube/Cube.cpp.o
 
@@ -148,7 +148,7 @@ Cube/Cube.o: Cube/Cube.cpp.o
 
 # target to build an object file
 Cube/Cube.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/Cube/Cube.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Cube.cpp.o
 .PHONY : Cube/Cube.cpp.o
 
 Cube/Cube.i: Cube/Cube.cpp.i
@@ -157,7 +157,7 @@ Cube/Cube.i: Cube/Cube.cpp.i
 
 # target to preprocess a source file
 Cube/Cube.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/Cube/Cube.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Cube.cpp.i
 .PHONY : Cube/Cube.cpp.i
 
 Cube/Cube.s: Cube/Cube.cpp.s
@@ -166,7 +166,7 @@ Cube/Cube.s: Cube/Cube.cpp.s
 
 # target to generate assembly for a file
 Cube/Cube.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/Cube/Cube.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Cube.cpp.s
 .PHONY : Cube/Cube.cpp.s
 
 Cube/Field.o: Cube/Field.cpp.o
@@ -175,7 +175,7 @@ Cube/Field.o: Cube/Field.cpp.o
 
 # target to build an object file
 Cube/Field.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/Cube/Field.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Field.cpp.o
 .PHONY : Cube/Field.cpp.o
 
 Cube/Field.i: Cube/Field.cpp.i
@@ -184,7 +184,7 @@ Cube/Field.i: Cube/Field.cpp.i
 
 # target to preprocess a source file
 Cube/Field.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/Cube/Field.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Field.cpp.i
 .PHONY : Cube/Field.cpp.i
 
 Cube/Field.s: Cube/Field.cpp.s
@@ -193,7 +193,7 @@ Cube/Field.s: Cube/Field.cpp.s
 
 # target to generate assembly for a file
 Cube/Field.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/Cube/Field.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Field.cpp.s
 .PHONY : Cube/Field.cpp.s
 
 main.o: main.cpp.o
@@ -202,7 +202,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -211,7 +211,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -220,7 +220,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_algo.dir/build.make CMakeFiles/gen_algo.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -231,7 +231,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... gen_algo"
+	@echo "... Rubik"
 	@echo "... Cube/Cube.o"
 	@echo "... Cube/Cube.i"
 	@echo "... Cube/Cube.s"
