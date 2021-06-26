@@ -3,16 +3,45 @@
 #include <sstream>
 #include <algorithm>
 
-const std::vector<std::vector<char>> Cube::Rotate::order = {{Cube::FRONT, Cube::LEFT, Cube::BACK, Cube::RIGHT},
-                                                            {Cube::FRONT, Cube::RIGHT, Cube::BACK, Cube::LEFT},
-                                                            {Cube::UP, Cube::FRONT, Cube::DOWN, Cube::BACK},
-                                                            {Cube::UP, Cube::BACK, Cube::DOWN, Cube::FRONT},
-                                                            {Cube::UP, Cube::RIGHT, Cube::DOWN, Cube::LEFT},
-                                                            {Cube::UP, Cube::LEFT, Cube::DOWN, Cube::RIGHT}};
+const std::vector<std::vector<char>> Cube::Rotate::order_ = {
+    {Cube::FRONT, Cube::LEFT, Cube::BACK, Cube::RIGHT}, // UP
+    {Cube::FRONT, Cube::RIGHT, Cube::BACK, Cube::LEFT}, // DOWN
+    {Cube::UP, Cube::FRONT, Cube::DOWN, Cube::BACK}, // LEFT
+    {Cube::UP, Cube::BACK, Cube::DOWN, Cube::FRONT}, // RIGHT
+    {Cube::UP, Cube::RIGHT, Cube::DOWN, Cube::LEFT}, // FRONT
+    {Cube::UP, Cube::LEFT, Cube::DOWN, Cube::RIGHT} // BACK
+};
+
+const std::vector<std::vector<bool>> Cube::Rotate::is_reverse_ = {
+    {false, false, false, false},
+    {false, false, false, false},
+    {false, false, true, true},
+    {true, true, false, false},
+    {false, true, false, true},
+    {true, false, true, false},
+};
+
+const std::vector<std::vector<bool>> Cube::Rotate::is_row_ = {
+    {true, true, true, true},
+    {true, true, true, true},
+    {false, false, false, false},
+    {false, false, false, false},
+    {true, false, true, false},
+    {true, false, true, false},
+};
+
+const std::vector<std::vector<bool>> Cube::Rotate::is_normal_deep_ = {
+    {true, true, true, true},
+    {false, false, false, false},
+    {true, true, true, false},
+    {false, true, false, false},
+    {false, true, true, false},
+    {true, true, false, false},
+};
 
 Cube::Cube(size_t n) :
     n_(n),
-    rotation(this) {
+    rotation(*this) {
   for (int i = 0; i < 6; i++)
     faces_.emplace_back(n, i);
 }
@@ -51,46 +80,32 @@ Cube::Command::Command(const std::string &s) {
   type_ = i - 1;
 }
 
-void Cube::Rotate::operator()(char face, unsigned deep_) {
-  // проверка
-  if (deep_ == 0)
-    c_->faces_[face].rotate();
+void Cube::Rotate::operator()(char face, unsigned deep) {
+  if (deep == 0)
+    cube.get(face).rotate();
   std::vector<std::vector<char>> t;
-  auto current_order = order[face];
-
-  if (face == Cube::DOWN || face == Cube::RIGHT || face == Cube::FRONT)
-    deep_ = c_->n_ - deep_ - 1;
-
-  if (face == Cube::RIGHT || face == Cube::LEFT)
-    for (auto i : order[face])
-      c_->faces_[i].rotate();
-
-  std::vector<unsigned> deep(4, deep_);
-
-  if (face == Cube::FRONT || face == Cube::BACK) {
-    c_->faces_[Cube::LEFT].rotate_();
-    deep[find(current_order.begin(), current_order.end(), Cube::LEFT) - current_order.begin()] =
-        c_->n() - 1 - deep[find(current_order.begin(), current_order.end(), Cube::LEFT) - current_order.begin()];
-
-    c_->faces_[Cube::RIGHT].rotate_();
-  }
-
-  if (face == Cube::RIGHT || face == Cube::LEFT)
-    deep[find(current_order.begin(), current_order.end(), Cube::BACK) - current_order.begin()] =
-        c_->n() - 1 - deep[find(current_order.begin(), current_order.end(), Cube::BACK) - current_order.begin()];
+  std::vector<char> order = order_[face];
+  std::vector<bool> is_row = is_row_[face];
+  std::vector<bool> is_normal_deep = is_normal_deep_[face];
+  std::vector<bool> is_reverse = is_reverse_[face];
 
   t.reserve(4);
-  for (int i = 0; i < 4; i++)
-    t.push_back(c_->faces_[current_order[i]].get_row(deep[i]));
-  for (int i = 0; i < 4; i++)
-    c_->faces_[current_order[i]].set_row(deep[i], t[(i - 1 + 4) % 4]);
+  for (int i = 0; i < 4; i++) {
+    if (is_row[i])
+      t.push_back(cube.get(order[i]).get_row(is_normal_deep[i] ? deep : cube.n() - 1 - deep));
+    else
+      t.push_back(cube.get(order[i]).get_col(is_normal_deep[i] ? deep : cube.n() - 1 - deep));
 
-  if (face == Cube::RIGHT || face == Cube::LEFT)
-    for (auto i : order[face])
-      c_->faces_[i].rotate_();
+    if (is_reverse[i])
+      std::reverse(t[i].begin(), t[i].end());
+  }
 
-  if (face == Cube::FRONT || face == Cube::BACK) {
-    c_->faces_[Cube::LEFT].rotate();
-    c_->faces_[Cube::RIGHT].rotate_();
+  for (int i = 0; i < 4; i++) {
+    char cur = i;
+    char next = (i + 1) % 4;
+    if (is_row[next])
+      cube.get(order[next]).set_row(is_normal_deep[next] ? deep : cube.n() - 1 - deep, t[cur]);
+    else
+      cube.get(order[next]).set_col(is_normal_deep[next] ? deep : cube.n() - 1 - deep, t[cur]);
   }
 }

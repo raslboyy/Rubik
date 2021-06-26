@@ -8,11 +8,14 @@ class Cube {
   class Command;
   class Rotate {
    public:
-    Rotate(Cube *c) : c_(c) {};
+    explicit Rotate(Cube &c) : cube(c) {};
     void operator()(char, unsigned);
    private:
-    Cube *c_;
-    static const std::vector<std::vector<char>> order;
+    Cube &cube;
+    static const std::vector<std::vector<char>> order_;
+    static const std::vector<std::vector<bool>> is_row_;
+    static const std::vector<std::vector<bool>> is_normal_deep_;
+    static const std::vector<std::vector<bool>> is_reverse_;
   };
 
   explicit Cube(size_t n = 3);
@@ -43,6 +46,8 @@ class Cube {
     FRONT,
     BACK
   };
+
+  Field &get(char face) { return faces_[face]; }
 };
 
 class Cube::Command {

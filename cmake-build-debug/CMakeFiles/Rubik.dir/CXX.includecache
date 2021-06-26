@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp
-Cube.h
-/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
-sstream
--
-algorithm
--
-
 /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
 vector
 -
@@ -27,4 +19,12 @@ vector
 -
 iostream
 -
+
+/home/rasl/ITMO_Projects/Rubik/main.cpp
+iostream
+-
+Cube/Field.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Field.h
+Cube/Cube.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
 
