@@ -43,9 +43,10 @@ void Field::set_col(size_t j, const std::vector<char> &col) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Field &f) {
+  std::string check = "BGORWY";
   for (size_t i = 0; i != f.n_; i++) {
     for (size_t j = 0; j != f.n_; j++)
-      os << int(f.get(i, j)) << ' ';
+      os << check[int(f.get(i, j))] << ' ';
     os << '\n';
   }
   return os;

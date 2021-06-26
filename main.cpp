@@ -4,22 +4,12 @@
 
 using namespace std;
 
-//void print(Field &f) {
-//  for (int i = 0; i < f.n(); i++) {
-//    for (int j = 0; j < f.n(); j++)
-//      cout << f.get(i, j);
-//    cout << endl;
-//  }
-//}
-
 int main() {
 
-  Cube c(4);
-  c.scramble("2R1");
+  Cube c;
+  c.scramble("1R1 1U2 1B1");
+//  c.scramble("1F3 1L2 1D1 1R2");
   cout << c;
-
-//  print(f);
 
   return 0;
 }
-
