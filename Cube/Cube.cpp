@@ -2,6 +2,7 @@
 
 #include <sstream>
 #include <algorithm>
+#include <ctime>
 
 const std::vector<std::vector<char>> Cube::Rotate::order_ = {
     {Cube::FRONT, Cube::LEFT, Cube::BACK, Cube::RIGHT}, // UP
@@ -40,15 +41,14 @@ const std::vector<std::vector<bool>> Cube::Rotate::is_normal_deep_ = {
 };
 
 Cube::Cube(size_t n) :
-    n_(n),
-    rotation(*this) {
+    n_(n) {
   for (int i = 0; i < 6; i++)
-    faces_.emplace_back(n, i);
+    faces.emplace_back(n, i);
 }
 
 char Cube::get(char face, size_t i, size_t j) const {
   // проверка face
-  return faces_[0].get(i, j);
+  return faces[0].get(i, j);
 }
 
 void Cube::scramble(const std::string &s) {
@@ -56,31 +56,68 @@ void Cube::scramble(const std::string &s) {
   std::stringstream ss(s);
   std::string command;
   while (ss >> command)
-    Command(command).solve(this);
+    move(command).operator()(*this);
+}
+
+std::string Cube::scramble() {
+  srand(time(NULL));
+  std::string s;
+  size_t count = std::rand() % 90 + 10;
+  std::string commands = "UDLRFB";
+  while (count--)
+    s += std::to_string(1 + rand() % (n_ - 1)) + commands[rand() % 6] + std::to_string(1 + rand() % 2) + " ";
+  scramble(s);
+  return s;
 }
 
 std::ostream &operator<<(std::ostream &os, const Cube &c) {
-  os << "UP:" << Cube::UP << '\n' << c.faces_[c.UP];
-  os << "DOWN:" << Cube::DOWN << '\n' << c.faces_[c.DOWN];
-  os << "LEFT:" << Cube::LEFT << '\n' << c.faces_[c.LEFT];
-  os << "RIGHT:" << Cube::RIGHT << '\n' << c.faces_[c.RIGHT];
-  os << "FRONT:" << Cube::FRONT << '\n' << c.faces_[c.FRONT];
-  os << "BACK:" << Cube::BACK << '\n' << c.faces_[c.BACK];
+  os << "UP:" << Cube::UP << '\n' << c.faces[c.UP];
+  os << "DOWN:" << Cube::DOWN << '\n' << c.faces[c.DOWN];
+  os << "LEFT:" << Cube::LEFT << '\n' << c.faces[c.LEFT];
+  os << "RIGHT:" << Cube::RIGHT << '\n' << c.faces[c.RIGHT];
+  os << "FRONT:" << Cube::FRONT << '\n' << c.faces[c.FRONT];
+  os << "BACK:" << Cube::BACK << '\n' << c.faces[c.BACK];
   return os;
 }
+std::vector<Cube::move> Cube::solve() {
 
-Cube::Command::Command(const std::string &s) {
-  size_t k = std::string::npos;
-  int i = 0;
-  std::string commands = "UDLRFB";
-  while (k == std::string::npos)
-    k = s.find(commands[i++]);
-  deep_ = std::stoul(s.substr(0, k)) - 1;
-  count_ = std::stoul(s.substr(k + 1, s.size() - k - 1));
-  type_ = i - 1;
+  return std::vector<move>();
+}
+unsigned Cube::fitness() const {
+  unsigned count = 0;
+  for (char i = 0; i < 6; i++)
+    count += faces[i].count_without(i);
+  return count;
 }
 
-void Cube::Rotate::operator()(char face, unsigned deep) {
+Cube::move::move(const std::string &s) {
+  size_t k = std::string::npos;
+  int i = 0;
+  std::string moves = "UDLRFB";
+  while (k == std::string::npos)
+    k = s.find(moves[i++]);
+  if (s.substr(0, k).empty())
+    deep_ = 0;
+  else
+    deep_ = std::stoul(s.substr(0, k)) - 1;
+
+  if (s.substr(k + 1, s.size() - k - 1).empty())
+    count_ = 1;
+  else
+    count_ = std::stoul(s.substr(k + 1, s.size() - k - 1));
+
+  type_ = i - 1;
+}
+void Cube::move::operator()(Cube &cube) const {
+  for (unsigned i = 0; i != count_; i++)
+    rotation(cube, type_, deep_);
+}
+std::string Cube::move::to_string() const {
+  std::string moves = "UDLRFB";
+  return std::to_string(deep_) + moves[type_] + std::to_string(count_);
+}
+
+void Cube::Rotate::operator()(Cube &cube, char face, unsigned deep) const {
   if (deep == 0)
     cube.get(face).rotate();
   std::vector<std::vector<char>> t;

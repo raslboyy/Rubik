@@ -8,7 +8,13 @@ CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Cube/Field.h
 CMakeFiles/Rubik.dir/Cube/Field.cpp.o: ../Cube/Field.cpp
 CMakeFiles/Rubik.dir/Cube/Field.cpp.o: ../Cube/Field.h
 
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Cube.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Field.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/genetic_algorithm.cpp
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/genetic_algorithm.h
+
 CMakeFiles/Rubik.dir/main.cpp.o: ../Cube/Cube.h
 CMakeFiles/Rubik.dir/main.cpp.o: ../Cube/Field.h
+CMakeFiles/Rubik.dir/main.cpp.o: ../genetic_algorithm/genetic_algorithm.h
 CMakeFiles/Rubik.dir/main.cpp.o: ../main.cpp
 

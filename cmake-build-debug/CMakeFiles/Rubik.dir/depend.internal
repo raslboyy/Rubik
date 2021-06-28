@@ -8,7 +8,13 @@ CMakeFiles/Rubik.dir/Cube/Cube.cpp.o
 CMakeFiles/Rubik.dir/Cube/Field.cpp.o
  /home/rasl/ITMO_Projects/Rubik/Cube/Field.cpp
  /home/rasl/ITMO_Projects/Rubik/Cube/Field.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o
+ /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+ /home/rasl/ITMO_Projects/Rubik/Cube/Field.h
+ /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp
+ /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
 CMakeFiles/Rubik.dir/main.cpp.o
  /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
  /home/rasl/ITMO_Projects/Rubik/Cube/Field.h
+ /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
  /home/rasl/ITMO_Projects/Rubik/main.cpp

@@ -196,6 +196,33 @@ Cube/Field.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Field.cpp.s
 .PHONY : Cube/Field.cpp.s
 
+genetic_algorithm/genetic_algorithm.o: genetic_algorithm/genetic_algorithm.cpp.o
+
+.PHONY : genetic_algorithm/genetic_algorithm.o
+
+# target to build an object file
+genetic_algorithm/genetic_algorithm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o
+.PHONY : genetic_algorithm/genetic_algorithm.cpp.o
+
+genetic_algorithm/genetic_algorithm.i: genetic_algorithm/genetic_algorithm.cpp.i
+
+.PHONY : genetic_algorithm/genetic_algorithm.i
+
+# target to preprocess a source file
+genetic_algorithm/genetic_algorithm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.i
+.PHONY : genetic_algorithm/genetic_algorithm.cpp.i
+
+genetic_algorithm/genetic_algorithm.s: genetic_algorithm/genetic_algorithm.cpp.s
+
+.PHONY : genetic_algorithm/genetic_algorithm.s
+
+# target to generate assembly for a file
+genetic_algorithm/genetic_algorithm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.s
+.PHONY : genetic_algorithm/genetic_algorithm.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -238,6 +265,9 @@ help:
 	@echo "... Cube/Field.o"
 	@echo "... Cube/Field.i"
 	@echo "... Cube/Field.s"
+	@echo "... genetic_algorithm/genetic_algorithm.o"
+	@echo "... genetic_algorithm/genetic_algorithm.i"
+	@echo "... genetic_algorithm/genetic_algorithm.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

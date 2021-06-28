@@ -19,6 +19,7 @@ class Field {
   void set_col(size_t j, const std::vector<char> &col);
 
   [[nodiscard]] size_t n() const { return n_; }
+  [[nodiscard]] unsigned count_without(char c) const;
 
   friend std::ostream &operator<<(std::ostream &os, const Field &f);
  private:

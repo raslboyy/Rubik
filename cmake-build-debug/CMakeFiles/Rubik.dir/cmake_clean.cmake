@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Rubik.dir/Cube/Cube.cpp.o"
   "CMakeFiles/Rubik.dir/Cube/Field.cpp.o"
+  "CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o"
   "CMakeFiles/Rubik.dir/main.cpp.o"
   "Rubik"
   "Rubik.pdb"

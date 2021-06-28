@@ -94,6 +94,12 @@
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Field.h">
 			<Option target="Rubik"/>
 		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h">
+			<Option target="Rubik"/>
+		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/main.cpp">
 			<Option target="Rubik"/>
 		</Unit>

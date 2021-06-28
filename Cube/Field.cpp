@@ -42,9 +42,18 @@ void Field::set_col(size_t j, const std::vector<char> &col) {
     get(i, j) = col[i];
 }
 
+unsigned Field::count_without(char c) const {
+  unsigned count = 0;
+  for (size_t i = 0; i != n_; i++)
+    for (size_t j = 0; j != n_; j++)
+      if (get(i, j) != c)
+        count++;
+  return count;
+}
+
 std::ostream &operator<<(std::ostream &os, const Field &f) {
-  std::string check = "BGORWY";
-//  std::string check = "WYORGB";
+//  std::string check = "BGORWY";
+  std::string check = "WYORGB";
   for (size_t i = 0; i != f.n_; i++) {
     for (size_t j = 0; j != f.n_; j++)
       os << check[int(f.get(i, j))] << ' ';

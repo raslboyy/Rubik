@@ -20,6 +20,16 @@ vector
 iostream
 -
 
+/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
+vector
+-
+random
+-
+string
+-
+../Cube/Cube.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+
 /home/rasl/ITMO_Projects/Rubik/main.cpp
 iostream
 -
@@ -27,4 +37,6 @@ Cube/Field.h
 /home/rasl/ITMO_Projects/Rubik/Cube/Field.h
 Cube/Cube.h
 /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+genetic_algorithm/genetic_algorithm.h
+/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
 
