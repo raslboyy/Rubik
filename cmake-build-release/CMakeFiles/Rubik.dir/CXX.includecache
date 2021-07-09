@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+vector
+-
+string
+-
+Side.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Side.h
+
+/home/rasl/ITMO_Projects/Rubik/Cube/Side.h
+utility
+-
+vector
+-
+iostream
+-
+memory
+-
+
+/home/rasl/ITMO_Projects/Rubik/main.cpp
+iostream
+-
+fstream
+-
+Cube/Side.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Side.h
+Cube/Cube.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+

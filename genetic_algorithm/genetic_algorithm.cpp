@@ -3,16 +3,16 @@
 #include <algorithm>
 #include <utility>
 #include <fstream>
-#include <climits>
+#include <limits>
 
 std::mt19937 genetic_algorithm::mersenne(std::random_device().operator()());
 
 genetic_algorithm::genetic_algorithm(const Cube &cube) :
     cube(cube),
     genes(population_size, gene(cube)),
-    elitism_num(population_size * 0.1),
-    max_kill_by_rank(population_size * 0.1),
-    max_random_kill(population_size * 0) {
+    elitism_num(population_size * elitism_num_proportion),
+    max_kill_by_rank(population_size * max_kill_by_rank_proportion),
+    max_random_kill(population_size * max_random_kill_proportion) {
   for (size_t i = 1; i != genes.size(); i++)
     genes[i] = gene(cube);
 }
@@ -21,13 +21,15 @@ bool genetic_algorithm::solve() {
   std::ofstream out("log.txt");
   bool is_found = check();
   for (int attempt = 0; attempt < max_resets && !is_found; attempt++) {
-    out << "attempt " << attempt << std::endl;
+    std::cout << "attempt " << attempt << std::endl;
     for (int i = 0; i < max_generations && !is_found; i++) {
-      out << "\t" << i << ". ";
       generation();
-      out << best_fitness() << std::endl;
+      if (i % 10 == 0)
+        std::cout << "\t" << i << ". " << best_fitness() << std::endl;
       is_found = check();
     }
+    for (size_t i = 0; i != genes.size(); i++)
+      genes[i] = gene(cube);
   }
   return is_found;
 }
@@ -75,14 +77,18 @@ void genetic_algorithm::new_generation() {
 void genetic_algorithm::mutation() {
   size_t n = genes.size();
   std::vector<bool> is_elitism(n, false);
-  for (auto i : random_unique_array(elitism_num, 0, elitism_num * 2))
-    is_elitism[i] = true;
-
-  for (size_t i = 0; i != n; i++) {
-    if (is_elitism[i])
-      genes.push_back(genes[i]);
-    genes[i].mutation(randU32(1, max_mutation + 1));
+//  for (auto i : random_unique_array(elitism_num, 0, elitism_num * 2))
+//    is_elitism[i] = true;
+  for (size_t i = elitism_num; i != n; i++) {
+    genes[i] = genes[randU32(0, elitism_num)];
+    genes[i].mutation(randU32(0, max_mutation + 1));
   }
+
+//  for (size_t i = 0; i != n; i++) {
+//    if (is_elitism[i])
+//      genes.push_back(genes[i]);
+//    genes[i].mutation(randU32(1, max_mutation + 1));
+//  }
 }
 
 std::vector<genetic_algorithm::gene> genetic_algorithm::crossover(const std::vector<gene> &random_genes) {
@@ -115,7 +121,7 @@ genetic_algorithm::gene genetic_algorithm::crossover(const genetic_algorithm::ge
 }
 std::vector<unsigned> genetic_algorithm::random_unique_array(size_t n, unsigned l, unsigned r) {
   std::vector<unsigned> array(n);
-  for (size_t i = 0, j = 0; i != n; ) {
+  for (size_t i = 0, j = 0; i != n;) {
     array[i] = randU32(l, r);
     for (j = 0; j != i; j++)
       if (array[i] != array[j])
@@ -139,23 +145,17 @@ unsigned genetic_algorithm::best_fitness() const {
 }
 
 genetic_algorithm::gene::gene(const Cube &start)
-    : cube(start), alleles(randU32(1, start_len)), fitness_(0), fitness_is_valid(false) {
-  if (cube.fitness() == 0)
-    return;
-  for (auto &m : alleles) {
-    std::cout << randU32(0, cube.n() - 1) << std::endl;
-    m.set_deep(randU32(0, cube.n() - 1));
-    m.set_count(randU32(1, 4));
-    m.set_type(static_cast<int>(randU32(0, 6)));
-    m(cube);
-  }
-}
+    : cube(start),
+      alleles(),
+      fitness_(std::numeric_limits<unsigned>::infinity()),
+      fitness_is_valid(false) {}
+
 unsigned genetic_algorithm::gene::fitness() const {
   if (fitness_is_valid)
     return fitness_;
   else {
-    const_cast<gene*>(this)->fitness_is_valid = true;
-    const_cast<gene*>(this)->fitness_ = cube.fitness();
+    const_cast<gene *>(this)->fitness_is_valid = true;
+    const_cast<gene *>(this)->fitness_ = cube.fitness();
     return fitness_;
   }
 }
@@ -183,8 +183,15 @@ genetic_algorithm::gene::gene(const Cube &start, std::vector<Cube::move> alleles
     alleles(std::move(alleles_)),
     fitness_(0),
     fitness_is_valid(false) {
-  for (auto &i : alleles)
-    i(cube);
+  for (auto &move : alleles)
+    move(cube);
+}
+
+std::string genetic_algorithm::gene::to_string() const {
+  std::string s;
+  for (const auto &i : alleles)
+    s += i.to_string() + " ";
+  return s;
 }
 
 std::vector<Cube::move> genetic_algorithm::gene::get_subAlleles(unsigned int l, unsigned int r) const {
@@ -193,17 +200,39 @@ std::vector<Cube::move> genetic_algorithm::gene::get_subAlleles(unsigned int l, 
     t.emplace_back(alleles[i]);
   return t;
 }
-std::string genetic_algorithm::gene::to_string() const {
-  std::string s;
-  for (const auto &i : alleles)
-    s += i.to_string() + " ";
-  return s;
-}
 
 void genetic_algorithm::gene::mutation(size_t n) {
+
   fitness_is_valid = false;
-  for (size_t i = 0; i != n; i++) {
-    alleles.emplace_back(randU32(0, cube.n() - 1), randU32(1, 4), static_cast<int>(randU32(0, 6)));
-    alleles.back().operator()(cube);
-  }
+//  for (size_t i = 0; i != n; i++) {
+//    alleles.emplace_back(randU32(0, cube.n() - 1), randU32(1, 4), static_cast<int>(randU32(0, 6)));
+//    alleles.back().operator()(cube);
+//  }
+  permutation(cube);
+}
+
+genetic_algorithm::gene::Permutation::Permutation() : set({
+                                                              Cube::move("F' L' B' R' U' R U' B L F R U R' U"),
+                                                              Cube::move("F R B L U L' U B' R' F' L' U' L U'"),
+                                                              Cube::move("U2 B U2 B' R2 F R' F' U2 F' U2 F R'"),
+                                                              Cube::move("U2 R U2 R' F2 L F' L' U2 L' U2 L F'"),
+                                                              Cube::move("U' B2 D2 L' F2 D2 B2 R' U'"),
+                                                              Cube::move("U B2 D2 R F2 D2 B2 L U"),
+                                                              Cube::move("D' R' D R2 U' R B2 L U' L' B2 U R2"),
+                                                              Cube::move("D L D' L2 U L' B2 R' U R B2 U' L2"),
+                                                              Cube::move("R' U L' U2 R U' L R' U L' U2 R U' L U'"),
+                                                              Cube::move("L U' R U2 L' U R' L U' R U2 L' U R' U"),
+                                                              Cube::move("F' U B U' F U B' U'"),
+                                                              Cube::move("F U' B' U F' U' B U"),
+                                                              Cube::move("L' U2 L R' F2 R"),
+                                                              Cube::move("R' U2 R L' B2 L"),
+                                                              Cube::move("2L2 U 2L2 U2 2L2 U 2L2")
+                                                          }) {
+
+}
+void genetic_algorithm::gene::Permutation::operator()(Cube &c) const {
+  int n_view = randU32(0, 5);
+  for (int i = 0; i < n_view; i++)
+    c.to_view(randU32(0, 4));
+  set[randU32(0, set.size())].operator()(c);
 }

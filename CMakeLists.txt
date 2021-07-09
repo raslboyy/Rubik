@@ -3,5 +3,5 @@ project(Rubik)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Rubik main.cpp Cube/Field.h Cube/Cube.h Cube/Field.cpp Cube/Cube.cpp genetic_algorithm/genetic_algorithm.cpp genetic_algorithm/genetic_algorithm.h)
+add_executable(Rubik main.cpp Cube/Side.h Cube/Cube.h Cube/Side.cpp Cube/Cube.cpp)
 target_link_libraries(Rubik -lglut -lGL -lGLU -lGLEW)

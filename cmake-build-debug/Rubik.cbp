@@ -88,16 +88,10 @@
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h">
 			<Option target="Rubik"/>
 		</Unit>
-		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Field.cpp">
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Side.cpp">
 			<Option target="Rubik"/>
 		</Unit>
-		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Field.h">
-			<Option target="Rubik"/>
-		</Unit>
-		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp">
-			<Option target="Rubik"/>
-		</Unit>
-		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h">
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Side.h">
 			<Option target="Rubik"/>
 		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/main.cpp">

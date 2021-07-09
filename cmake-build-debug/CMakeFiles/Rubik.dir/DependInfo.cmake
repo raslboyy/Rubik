@@ -5,8 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles/Rubik.dir/Cube/Cube.cpp.o"
-  "/home/rasl/ITMO_Projects/Rubik/Cube/Field.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles/Rubik.dir/Cube/Field.cpp.o"
-  "/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o"
+  "/home/rasl/ITMO_Projects/Rubik/Cube/Side.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles/Rubik.dir/Cube/Side.cpp.o"
   "/home/rasl/ITMO_Projects/Rubik/main.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles/Rubik.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

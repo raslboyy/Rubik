@@ -3,6 +3,7 @@
 #include <vector>
 #include <random>
 #include <string>
+#include <array>
 
 #include "../Cube/Cube.h"
 
@@ -13,10 +14,13 @@ class genetic_algorithm {
   bool solve();
  private:
   size_t population_size = 1000; // 500
+  double elitism_num_proportion = 0.2;
   size_t elitism_num; // 0.1
-  size_t max_generations = 100;
-  size_t max_resets = 100;
+  size_t max_generations = 500;
+  size_t max_resets = 5;
+  double max_kill_by_rank_proportion = 0.1;
   size_t max_kill_by_rank; // 0.2
+  double max_random_kill_proportion = 0.01;
   size_t max_random_kill; // 0.01
   size_t max_mutation = 1; // 10
   // start_len ?
@@ -42,7 +46,9 @@ class genetic_algorithm::gene {
  public:
   explicit gene(const Cube &start);
   explicit gene(const Cube &start, std::vector<Cube::move> alleles);
+
   gene(const gene &other) = default;
+  gene &operator=(const gene &other) = default;
 
   void mutation(size_t n);
 
@@ -52,6 +58,7 @@ class genetic_algorithm::gene {
   [[nodiscard]] std::string to_string() const;
 
   [[nodiscard]] std::vector<Cube::move> get_subAlleles(unsigned, unsigned) const;
+
   friend bool operator<(const gene &gene1, const gene &gene2);
   friend bool operator>(const gene &gene1, const gene &gene2);
   friend bool operator<=(const gene &gene1, const gene &gene2);
@@ -64,6 +71,14 @@ class genetic_algorithm::gene {
   bool fitness_is_valid;
   unsigned fitness_;
 
-  static const size_t start_len = 2;
-};
+  struct Permutation {
+    Permutation();
 
+    void operator()(Cube &c) const;
+
+   private:
+    static const size_t N = 15;
+    std::array<Cube::move> set;
+  };
+  static const Permutation permutation;
+};

@@ -58,10 +58,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/152/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/158/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/152/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/158/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /home/rasl/ITMO_Projects/Rubik/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/152/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/158/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -89,7 +89,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/152/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/158/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -169,59 +169,32 @@ Cube/Cube.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Cube.cpp.s
 .PHONY : Cube/Cube.cpp.s
 
-Cube/Field.o: Cube/Field.cpp.o
+Cube/Side.o: Cube/Side.cpp.o
 
-.PHONY : Cube/Field.o
-
-# target to build an object file
-Cube/Field.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Field.cpp.o
-.PHONY : Cube/Field.cpp.o
-
-Cube/Field.i: Cube/Field.cpp.i
-
-.PHONY : Cube/Field.i
-
-# target to preprocess a source file
-Cube/Field.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Field.cpp.i
-.PHONY : Cube/Field.cpp.i
-
-Cube/Field.s: Cube/Field.cpp.s
-
-.PHONY : Cube/Field.s
-
-# target to generate assembly for a file
-Cube/Field.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Field.cpp.s
-.PHONY : Cube/Field.cpp.s
-
-genetic_algorithm/genetic_algorithm.o: genetic_algorithm/genetic_algorithm.cpp.o
-
-.PHONY : genetic_algorithm/genetic_algorithm.o
+.PHONY : Cube/Side.o
 
 # target to build an object file
-genetic_algorithm/genetic_algorithm.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o
-.PHONY : genetic_algorithm/genetic_algorithm.cpp.o
+Cube/Side.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Side.cpp.o
+.PHONY : Cube/Side.cpp.o
 
-genetic_algorithm/genetic_algorithm.i: genetic_algorithm/genetic_algorithm.cpp.i
+Cube/Side.i: Cube/Side.cpp.i
 
-.PHONY : genetic_algorithm/genetic_algorithm.i
+.PHONY : Cube/Side.i
 
 # target to preprocess a source file
-genetic_algorithm/genetic_algorithm.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.i
-.PHONY : genetic_algorithm/genetic_algorithm.cpp.i
+Cube/Side.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Side.cpp.i
+.PHONY : Cube/Side.cpp.i
 
-genetic_algorithm/genetic_algorithm.s: genetic_algorithm/genetic_algorithm.cpp.s
+Cube/Side.s: Cube/Side.cpp.s
 
-.PHONY : genetic_algorithm/genetic_algorithm.s
+.PHONY : Cube/Side.s
 
 # target to generate assembly for a file
-genetic_algorithm/genetic_algorithm.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.s
-.PHONY : genetic_algorithm/genetic_algorithm.cpp.s
+Cube/Side.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Side.cpp.s
+.PHONY : Cube/Side.cpp.s
 
 main.o: main.cpp.o
 
@@ -262,12 +235,9 @@ help:
 	@echo "... Cube/Cube.o"
 	@echo "... Cube/Cube.i"
 	@echo "... Cube/Cube.s"
-	@echo "... Cube/Field.o"
-	@echo "... Cube/Field.i"
-	@echo "... Cube/Field.s"
-	@echo "... genetic_algorithm/genetic_algorithm.o"
-	@echo "... genetic_algorithm/genetic_algorithm.i"
-	@echo "... genetic_algorithm/genetic_algorithm.s"
+	@echo "... Cube/Side.o"
+	@echo "... Cube/Side.i"
+	@echo "... Cube/Side.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

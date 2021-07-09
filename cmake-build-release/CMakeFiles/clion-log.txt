@@ -1,0 +1,4 @@
+/snap/clion/158/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/rasl/ITMO_Projects/Rubik
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rasl/ITMO_Projects/Rubik/cmake-build-release

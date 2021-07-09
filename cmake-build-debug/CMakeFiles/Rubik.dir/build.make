@@ -53,10 +53,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/152/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/158/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/152/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/158/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -89,18 +89,18 @@ CMakeFiles/Rubik.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubik.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rasl/ITMO_Projects/Rubik/main.cpp -o CMakeFiles/Rubik.dir/main.cpp.s
 
-CMakeFiles/Rubik.dir/Cube/Field.cpp.o: CMakeFiles/Rubik.dir/flags.make
-CMakeFiles/Rubik.dir/Cube/Field.cpp.o: ../Cube/Field.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Rubik.dir/Cube/Field.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Rubik.dir/Cube/Field.cpp.o -c /home/rasl/ITMO_Projects/Rubik/Cube/Field.cpp
+CMakeFiles/Rubik.dir/Cube/Side.cpp.o: CMakeFiles/Rubik.dir/flags.make
+CMakeFiles/Rubik.dir/Cube/Side.cpp.o: ../Cube/Side.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Rubik.dir/Cube/Side.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Rubik.dir/Cube/Side.cpp.o -c /home/rasl/ITMO_Projects/Rubik/Cube/Side.cpp
 
-CMakeFiles/Rubik.dir/Cube/Field.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Rubik.dir/Cube/Field.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rasl/ITMO_Projects/Rubik/Cube/Field.cpp > CMakeFiles/Rubik.dir/Cube/Field.cpp.i
+CMakeFiles/Rubik.dir/Cube/Side.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Rubik.dir/Cube/Side.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rasl/ITMO_Projects/Rubik/Cube/Side.cpp > CMakeFiles/Rubik.dir/Cube/Side.cpp.i
 
-CMakeFiles/Rubik.dir/Cube/Field.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubik.dir/Cube/Field.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rasl/ITMO_Projects/Rubik/Cube/Field.cpp -o CMakeFiles/Rubik.dir/Cube/Field.cpp.s
+CMakeFiles/Rubik.dir/Cube/Side.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubik.dir/Cube/Side.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rasl/ITMO_Projects/Rubik/Cube/Side.cpp -o CMakeFiles/Rubik.dir/Cube/Side.cpp.s
 
 CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: CMakeFiles/Rubik.dir/flags.make
 CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Cube/Cube.cpp
@@ -115,36 +115,21 @@ CMakeFiles/Rubik.dir/Cube/Cube.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubik.dir/Cube/Cube.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp -o CMakeFiles/Rubik.dir/Cube/Cube.cpp.s
 
-CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: CMakeFiles/Rubik.dir/flags.make
-CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/genetic_algorithm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o -c /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp
-
-CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp > CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.i
-
-CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp -o CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.s
-
 # Object files for target Rubik
 Rubik_OBJECTS = \
 "CMakeFiles/Rubik.dir/main.cpp.o" \
-"CMakeFiles/Rubik.dir/Cube/Field.cpp.o" \
-"CMakeFiles/Rubik.dir/Cube/Cube.cpp.o" \
-"CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o"
+"CMakeFiles/Rubik.dir/Cube/Side.cpp.o" \
+"CMakeFiles/Rubik.dir/Cube/Cube.cpp.o"
 
 # External object files for target Rubik
 Rubik_EXTERNAL_OBJECTS =
 
 Rubik: CMakeFiles/Rubik.dir/main.cpp.o
-Rubik: CMakeFiles/Rubik.dir/Cube/Field.cpp.o
+Rubik: CMakeFiles/Rubik.dir/Cube/Side.cpp.o
 Rubik: CMakeFiles/Rubik.dir/Cube/Cube.cpp.o
-Rubik: CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o
 Rubik: CMakeFiles/Rubik.dir/build.make
 Rubik: CMakeFiles/Rubik.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Rubik"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rasl/ITMO_Projects/Rubik/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Rubik"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Rubik.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
