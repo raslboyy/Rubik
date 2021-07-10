@@ -25,7 +25,7 @@ Side::byte Side::get(size_t i, size_t j) const {
   return const_cast<Side *>(this)->get(i, j);
 };
 
-std::vector<Side::byte> Side::get_row(size_t i) {
+std::vector<Side::byte> Side::get_row(size_t i) const {
   std::vector<Side::byte> row(n_);
   for (size_t j = 0; j != n_; j++)
     row[j] = get(i, j);
@@ -35,7 +35,7 @@ void Side::set_row(size_t i, const std::vector<byte> &row) {
   for (size_t j = 0; j != n_; j++)
     get(i, j) = row[j];
 }
-std::vector<Side::byte> Side::get_column(size_t j) {
+std::vector<Side::byte> Side::get_column(size_t j) const {
   std::vector<Side::byte> col(n_);
   for (size_t i = 0; i != n_; i++)
     col[i] = get(i, j);
@@ -56,11 +56,11 @@ unsigned Side::count_without(Side::byte c) const {
 }
 
 std::ostream &operator<<(std::ostream &os, const Side &f) {
-//  std::string check = "BGORWY";
-  std::string check = "UDLRFB";
+  std::string check = "WYORGB";
+//  std::string check = "UDLRFB";
   for (size_t i = 0; i != f.n_; i++) {
     for (size_t j = 0; j != f.n_; j++)
-      os << int(f[i][j]) << ' ';
+      os << check[(f[i][j])] << ' ';
     os << '\n';
   }
   return os;

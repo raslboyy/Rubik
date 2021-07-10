@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/Rubik.dir/main.cpp.o CMakeFiles/Rubik.dir/Cube/Side.cpp.o CMakeFiles/Rubik.dir/Cube/Cube.cpp.o -o Rubik  -lglut -lGL -lGLU -lGLEW 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/Rubik.dir/main.cpp.o CMakeFiles/Rubik.dir/Cube/Side.cpp.o CMakeFiles/Rubik.dir/Cube/Cube.cpp.o CMakeFiles/Rubik.dir/Random.cpp.o -o Rubik  -lglut -lGL -lGLU -lGLEW 

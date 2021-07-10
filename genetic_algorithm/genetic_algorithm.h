@@ -26,7 +26,6 @@ class genetic_algorithm {
   // start_len ?
   std::vector<gene> genes;
   Cube cube;
-  static std::mt19937 mersenne;
 
   void generation();
   void selection();

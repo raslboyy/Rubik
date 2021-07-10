@@ -196,6 +196,33 @@ Cube/Side.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Side.cpp.s
 .PHONY : Cube/Side.cpp.s
 
+Random.o: Random.cpp.o
+
+.PHONY : Random.o
+
+# target to build an object file
+Random.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Random.cpp.o
+.PHONY : Random.cpp.o
+
+Random.i: Random.cpp.i
+
+.PHONY : Random.i
+
+# target to preprocess a source file
+Random.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Random.cpp.i
+.PHONY : Random.cpp.i
+
+Random.s: Random.cpp.s
+
+.PHONY : Random.s
+
+# target to generate assembly for a file
+Random.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Random.cpp.s
+.PHONY : Random.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -238,6 +265,9 @@ help:
 	@echo "... Cube/Side.o"
 	@echo "... Cube/Side.i"
 	@echo "... Cube/Side.s"
+	@echo "... Random.o"
+	@echo "... Random.i"
+	@echo "... Random.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

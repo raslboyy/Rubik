@@ -1,89 +1,118 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <memory>
+
 #include "Side.h"
+#include "../Random.h"
 
 class Cube {
  public:
 
-  explicit Cube(size_t n = 3);
-  Cube(std::vector<Side>& m);
-  Cube(const Cube &other) = default;
-  Cube &operator=(const Cube &other) = default;
+  explicit Cube(size_t = 3);
+  explicit Cube(std::vector<Side> &);
 
-  void R(size_t deep = 0) { rotation(*this, RIGHT, deep); }
-  void L(size_t deep = 0) { rotation(*this, LEFT, deep); }
-  void U(size_t deep = 0) { rotation(*this, UP, deep); }
-  void D(size_t deep = 0) { rotation(*this, DOWN, deep); }
-  void F(size_t deep = 0) { rotation(*this, FRONT, deep); }
-  void B(size_t deep = 0) { rotation(*this, BACK, deep); }
+  class IAction;
 
-  [[nodiscard]] size_t n() const { return n_; }
-  [[nodiscard]] char get(char face, size_t i, size_t j) const;
+  std::string random_scramble(size_t = std::numeric_limits<size_t>::infinity());
+  void apply_scramble(const std::string &);
+  [[nodiscard]] std::string get_scramble() const;
 
-  std::string scramble(size_t count = 0);
-  void scramble(const std::string &s);
-
-  class move;
-
-  [[nodiscard]] unsigned fitness() const;
-  std::vector<move> solve();
-
-  void to_view(char to) { view(*this, to); }
+  [[nodiscard]] unsigned stupidFitness() const;
+  [[nodiscard]] unsigned layerFitness() const;
 
   friend std::ostream &operator<<(std::ostream &os, const Cube &c);
 //  friend std::istream &operator>>(std::istream &is, Cube &c);
-  enum {
-    UP = 0,
-    DOWN,
-    LEFT,
-    RIGHT,
-    FRONT,
-    BACK
-  };
+
  private:
   size_t n_;
-  std::vector<Side> faces;
+  std::vector<Side> sides;
 
-  class Rotation {
+ public:
+  enum SIDE : size_t { UP = 0, DOWN, LEFT, RIGHT, FRONT, BACK };
+
+  Cube(const Cube &) = default;
+  Cube &operator=(const Cube &) = default;
+
+  [[nodiscard]] size_t n() const { return n_; }
+
+ private:
+  Side &get(SIDE face) { return sides[face]; }
+
+ public:
+  class IAction {
    public:
-    void operator()(Cube &cube, char, unsigned) const;
-   private:
-    static const std::vector<std::vector<char>> order_;
-    static const std::vector<std::vector<bool>> is_row_;
-    static const std::vector<std::vector<bool>> is_normal_deep_;
-    static const std::vector<std::vector<bool>> is_reverse_;
+    virtual ~IAction() = default;
+    virtual const IAction &operator()(Cube &) const = 0;
+    [[nodiscard]] virtual std::string to_string() const = 0;
   };
-  constexpr const static Rotation rotation{};
-
-  class View {
+ private:
+  class Move : public IAction {
    public:
-    void operator()(Cube &cube, unsigned view) const;
+    explicit Move(size_t n);
+    Move(unsigned deep, unsigned count, SIDE side);
+    explicit Move(const std::string &);
+
+    const IAction &operator()(Cube &) const override;
+    [[nodiscard]] std::string to_string() const override;
+
    private:
+    unsigned deep_{};
+    unsigned count_{};
+    SIDE side_{};
 
+    static auto &GetOrder();
+    static auto &GetIsRow();
+    static auto &GetIsNormalDeep();
+    static auto &GetIsReverse();
+    void operator()(Cube &cube, SIDE side, unsigned deep) const;
   };
-  constexpr const static View view{};
+  class Rotate;
+  class Skip;
+  class Scramble : public IAction {
+    public:
+    explicit Scramble(size_t n, size_t = std::numeric_limits<size_t>::infinity());
+    explicit Scramble(size_t n, const std::string &);
+    // проверка n
+    Scramble(const Scramble &) = default;
 
-  Side &get(char face) { return faces[face]; }
+    const IAction &operator()(Cube &) const override;
+    [[nodiscard]] std::string to_string() const override;
+
+    Scramble &operator+=(const Scramble &);
+    private:
+    size_t n_;
+    std::vector<std::shared_ptr<IAction>> scramble;
+  };
+  friend Scramble operator+(Scramble, const Scramble &);
+  Scramble scramble_;
+ public:
+  void R(size_t deep = 0) { Move(deep, 1, RIGHT).operator()(*this); }
+  void L(size_t deep = 0) { Move(deep, 1, LEFT) .operator()(*this); }
+  void U(size_t deep = 0) { Move(deep, 1, UP)   .operator()(*this); }
+  void D(size_t deep = 0) { Move(deep, 1, DOWN) .operator()(*this); }
+  void F(size_t deep = 0) { Move(deep, 1, FRONT).operator()(*this); }
+  void B(size_t deep = 0) { Move(deep, 1, BACK) .operator()(*this); }
 };
 
-class Cube::move {
+
+class Cube::Rotate : public IAction {
  public:
-  move() : deep_(0), count_(0), type_(0) {};
-  move(const std::string &);
-  move(unsigned deep, unsigned count, int type) : deep_(deep), count_(count), type_(type) {};
+  Rotate() : type_(static_cast<SIDE>(Random::randU32(4))) {};
+  explicit Rotate(SIDE type) : type_(type) {};
+  explicit Rotate(const std::string &s) : type_(static_cast<SIDE>(s[0] - '0')) {}
 
-  move(const move &other) = default;
-  move &operator=(const move &other) = default;
+  const IAction &operator()(Cube &) const override;
+  [[nodiscard]] std::string to_string() const override;
 
-  void operator()(Cube &) const;
-  [[nodiscard]] std::string to_string() const;
-
-  void set_deep(unsigned deep) { deep_ = deep; }
-  void set_count(unsigned count) { count_ = count; }
-  void set_type(int type) { type_ = type; }
  private:
-  unsigned deep_{};
-  unsigned count_{};
-  int type_{};
+  SIDE type_{};
+
+  static auto &GetOrder();
+};
+
+class Cube::Skip : public IAction {
+ public:
+  const IAction &operator()(Cube &) const override { return *this; };
+  [[nodiscard]] std::string to_string() const override { return "-"; }
 };

@@ -6,23 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp
-Cube.h
-/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
-sstream
--
-algorithm
--
-ctime
--
-
 /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
 vector
 -
 string
 -
+memory
+-
 Side.h
 /home/rasl/ITMO_Projects/Rubik/Cube/Side.h
+../Random.h
+/home/rasl/ITMO_Projects/Rubik/Random.h
 
 /home/rasl/ITMO_Projects/Rubik/Cube/Side.h
 utility
@@ -32,6 +26,10 @@ vector
 iostream
 -
 memory
+-
+
+/home/rasl/ITMO_Projects/Rubik/Random.h
+random
 -
 
 /home/rasl/ITMO_Projects/Rubik/main.cpp

@@ -13,21 +13,23 @@ class Side {
 
   explicit Side(const array &);
   Side(size_t, byte);
+  Side(const Side &) = default;
+  Side &operator=(const Side &) = default;
 
   void rotate() { state = (state + 1) % 4; };
   void rotate_() { state = (state - 1) % 4; }
 
   Line operator[](size_t i) const { return Line(*this, i); }
 
-  std::vector<byte> get_row(size_t);
+  [[nodiscard]] std::vector<byte> get_row(size_t) const;
   void set_row(size_t i, const std::vector<byte> &);
-  std::vector<byte> get_column(size_t);
+  [[nodiscard]] std::vector<byte> get_column(size_t) const;
   void set_column(size_t j, const std::vector<byte> &);
 
   [[nodiscard]] size_t n() const { return n_; }
-  [[nodiscard]] unsigned count_without(byte c) const;
+  [[nodiscard]] unsigned count_without(byte) const;
 
-  friend std::ostream &operator<<(std::ostream &os, const Side &f);
+  friend std::ostream &operator<<(std::ostream &, const Side &);
 //  friend std::istream &operator>>(std::istream &is, Side &s);
  private:
   array a;

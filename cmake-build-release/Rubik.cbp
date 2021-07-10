@@ -94,6 +94,12 @@
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Side.h">
 			<Option target="Rubik"/>
 		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Random.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Random.h">
+			<Option target="Rubik"/>
+		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/main.cpp">
 			<Option target="Rubik"/>
 		</Unit>

@@ -93,12 +93,12 @@ clean: CMakeFiles/Rubik.dir/clean
 CMakeFiles/Rubik.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles --progress-num=1,2,3,4 "Built target Rubik"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles --progress-num=1,2,3,4,5 "Built target Rubik"
 .PHONY : CMakeFiles/Rubik.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Rubik.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Rubik.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles 0
 .PHONY : CMakeFiles/Rubik.dir/rule
