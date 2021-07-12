@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp
+Cube.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+sstream
+-
+algorithm
+-
+ctime
+-
+../Random.h
+/home/rasl/ITMO_Projects/Rubik/Random.h
+
 /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
 vector
 -
@@ -28,9 +40,39 @@ iostream
 memory
 -
 
+/home/rasl/ITMO_Projects/Rubik/Random.cpp
+Random.h
+/home/rasl/ITMO_Projects/Rubik/Random.h
+
 /home/rasl/ITMO_Projects/Rubik/Random.h
 random
 -
+
+/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp
+genetic_algorithm.h
+/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
+algorithm
+-
+utility
+-
+fstream
+-
+limits
+-
+../Random.h
+/home/rasl/ITMO_Projects/Rubik/Random.h
+
+/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
+vector
+-
+random
+-
+string
+-
+array
+-
+../Cube/Cube.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
 
 /home/rasl/ITMO_Projects/Rubik/main.cpp
 iostream
@@ -41,4 +83,6 @@ Cube/Side.h
 /home/rasl/ITMO_Projects/Rubik/Cube/Side.h
 Cube/Cube.h
 /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+genetic_algorithm/genetic_algorithm.h
+/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
 

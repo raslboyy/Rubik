@@ -4,11 +4,23 @@
 CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Cube/Cube.cpp
 CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Cube/Cube.h
 CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Cube/Side.h
+CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Random.h
 
 CMakeFiles/Rubik.dir/Cube/Side.cpp.o: ../Cube/Side.cpp
 CMakeFiles/Rubik.dir/Cube/Side.cpp.o: ../Cube/Side.h
 
+CMakeFiles/Rubik.dir/Random.cpp.o: ../Random.cpp
+CMakeFiles/Rubik.dir/Random.cpp.o: ../Random.h
+
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Cube.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Side.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Random.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/genetic_algorithm.cpp
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/genetic_algorithm.h
+
 CMakeFiles/Rubik.dir/main.cpp.o: ../Cube/Cube.h
 CMakeFiles/Rubik.dir/main.cpp.o: ../Cube/Side.h
+CMakeFiles/Rubik.dir/main.cpp.o: ../Random.h
+CMakeFiles/Rubik.dir/main.cpp.o: ../genetic_algorithm/genetic_algorithm.h
 CMakeFiles/Rubik.dir/main.cpp.o: ../main.cpp
 

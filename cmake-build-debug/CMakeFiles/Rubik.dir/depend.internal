@@ -12,8 +12,15 @@ CMakeFiles/Rubik.dir/Cube/Side.cpp.o
 CMakeFiles/Rubik.dir/Random.cpp.o
  /home/rasl/ITMO_Projects/Rubik/Random.cpp
  /home/rasl/ITMO_Projects/Rubik/Random.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o
+ /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+ /home/rasl/ITMO_Projects/Rubik/Cube/Side.h
+ /home/rasl/ITMO_Projects/Rubik/Random.h
+ /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp
+ /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
 CMakeFiles/Rubik.dir/main.cpp.o
  /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
  /home/rasl/ITMO_Projects/Rubik/Cube/Side.h
  /home/rasl/ITMO_Projects/Rubik/Random.h
+ /home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.h
  /home/rasl/ITMO_Projects/Rubik/main.cpp

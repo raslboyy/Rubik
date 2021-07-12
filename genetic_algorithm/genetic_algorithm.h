@@ -9,56 +9,74 @@
 
 class genetic_algorithm {
  public:
-  explicit genetic_algorithm(const Cube &);
+
+  genetic_algorithm() = default;
+  genetic_algorithm(const genetic_algorithm &) = delete;
+  genetic_algorithm &operator=(const genetic_algorithm &) = delete;
 
   class Gene;
-  struct Parameters {
-    size_t max_resets = 5;
-    size_t max_generations = 500;
-    size_t population_size = 1000;
-    double elitism_num = 0.2;
-    double max_kill_by_rank = 0.1;
-    double max_random_kill = 0.01;
-    size_t max_mutation_size = 1;
+  class Parameters {
+   public:
+    Parameters(size_t = 5, size_t = 500, size_t = 500, double = 0.2, double = 0.6, double = 0.02, size_t = 2, size_t = 10);
+    [[nodiscard]] size_t GetMaxResets() const;
+    void SetMaxResets(size_t value) { max_resets = value; }
+    [[nodiscard]] size_t GetMaxGenerations() const;
+    void SetMaxGenerations(size_t value) { max_generations = value; }
+    [[nodiscard]] size_t GetPopulationSize() const;
+    void SetPopulationSize(size_t value) { population_size = value; }
+    [[nodiscard]] size_t GetElitismNum() const;
+    void SetElitismNum(double value) { elitism_num = value; }
+    [[nodiscard]] size_t GetMaxKillByRank() const;
+    void SetMaxKillByRank(double value) { max_kill_by_rank = value; }
+    [[nodiscard]] size_t GetMaxRandomKill() const;
+    void SetMaxRandomKill(double value) { max_random_kill = value; }
+    [[nodiscard]] size_t GetMaxMutationSize() const;
+    void SetMaxMutationSize(size_t value) { max_mutation_size = value; }
+   private:
+    size_t max_resets;
+    size_t max_generations;
+    size_t population_size;
+    double elitism_num;
+    double max_kill_by_rank;
+    double max_random_kill;
+    size_t max_mutation_size;
+    size_t out_frequency;
   };
 
-  bool solve(const Parameters &);
+  static bool solve(const Cube &, const Parameters & = Parameters());
 
  private:
+  class CGeneration {
+   public:
+    explicit CGeneration(const Cube &, const Parameters &);
 
-  Parameters parameters;
-  std::vector<Gene> genes;
-  Cube cube;
-
-  void generation();
-  void selection();
-  void new_generation();
-  std::vector<Gene> crossover(const std::vector<Gene> &random_genes);
-  Gene crossover(const Gene &gene1, const Gene &gene2);
-  void mutation();
-
-  [[nodiscard]] bool check() const;
-  unsigned best_fitness() const;
-
-  static std::vector<unsigned int> random_unique_array(size_t n, unsigned int l, unsigned int r);
+    void update();
+    void reset();
+    [[nodiscard]] bool check() const;
+    [[nodiscard]] unsigned best_fitness() const;
+   private:
+    std::vector<Gene> genes;
+    Cube cube;
+    Parameters parameters;
+    void mutation();
+    void selection();
+    void elitism();
+    void crossover();
+  };
 };
 
 class genetic_algorithm::Gene {
  public:
-  explicit Gene(const Cube &start);
-  explicit Gene(const Cube &start, std::vector<Cube::move> alleles);
+  explicit Gene(const Cube &);
+  explicit Gene(const Cube &, const Cube::Scramble &);
 
   Gene(const Gene &other) = default;
   Gene &operator=(const Gene &other) = default;
 
   void mutation(size_t n);
 
-  [[nodiscard]] size_t len() const { return alleles.size(); }
+  [[nodiscard]] size_t len() const { return allele.len(); }
   [[nodiscard]] unsigned fitness() const;
-
-  [[nodiscard]] std::string to_string() const;
-
-  [[nodiscard]] std::vector<Cube::move> get_subAlleles(unsigned, unsigned) const;
 
   friend bool operator<(const Gene &gene1, const Gene &gene2);
   friend bool operator>(const Gene &gene1, const Gene &gene2);
@@ -67,20 +85,20 @@ class genetic_algorithm::Gene {
   friend bool operator==(const Gene &gene1, const Gene &gene2);
   friend bool operator!=(const Gene &gene1, const Gene &gene2);
  private:
-  std::vector<Cube::move> alleles;
+  Cube::Scramble allele;
   Cube cube;
   bool fitness_is_valid;
   unsigned fitness_;
 
-  struct Permutation {
-    Permutation();
-
-    void operator()(Cube &c) const;
-
-   private:
-    static const size_t N = 15;
-    std::array<Cube::move> set;
-  };
-  static const Permutation permutation;
+//  struct Permutation {
+//    Permutation();
+//
+//    void operator()(Cube &c) const;
+//
+//   private:
+//    static const size_t N = 15;
+//    std::array<Cube::Scramble> set;
+//  };
+//  static const Permutation permutation;
 };
 
