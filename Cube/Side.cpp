@@ -56,7 +56,7 @@ unsigned Side::count_without(Side::byte c) const {
 }
 
 std::ostream &operator<<(std::ostream &os, const Side &f) {
-  std::string check = "WYORGB";
+  std::string check = "ROBGDY";
 //  std::string check = "UDLRFB";
   for (size_t i = 0; i != f.n_; i++) {
     for (size_t j = 0; j != f.n_; j++)

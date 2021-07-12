@@ -5,20 +5,17 @@
 #include <fstream>
 #include <limits>
 
-std::mt19937 genetic_algorithm::mersenne(std::random_device().operator()());
+#include "../Random.h"
 
 genetic_algorithm::genetic_algorithm(const Cube &cube) :
     cube(cube),
-    genes(population_size, gene(cube)),
-    elitism_num(population_size * elitism_num_proportion),
-    max_kill_by_rank(population_size * max_kill_by_rank_proportion),
-    max_random_kill(population_size * max_random_kill_proportion) {
+    parameters() {
   for (size_t i = 1; i != genes.size(); i++)
-    genes[i] = gene(cube);
+    genes[i] = Gene(cube);
 }
 
-bool genetic_algorithm::solve() {
-  std::ofstream out("log.txt");
+bool genetic_algorithm::solve(const Parameters & = Parameters()) {
+  std::ofstream log("log.txt");
   bool is_found = check();
   for (int attempt = 0; attempt < max_resets && !is_found; attempt++) {
     std::cout << "attempt " << attempt << std::endl;

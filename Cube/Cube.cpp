@@ -12,7 +12,7 @@ Cube::Cube(size_t n) :
   for (int i = 0; i < 6; i++)
     sides.emplace_back(n, i);
 }
-Cube::Cube(std::vector<Side> &m) : sides(m), n_(m[0].n()), scramble_(m[0].n()) {}
+Cube::Cube(size_t n, std::vector<Side> m) : sides(std::move(m)), n_(n), scramble_(n) {}
 
 // fix count >
 std::string Cube::random_scramble(size_t size) {
@@ -37,7 +37,7 @@ unsigned Cube::stupidFitness() const {
   return count;
 }
 unsigned Cube::layerFitness() const {
-  return 0;
+
 }
 
 Cube::Move::Move(size_t n) :
@@ -159,14 +159,29 @@ void Cube::Move::operator()(Cube &cube, SIDE side, unsigned deep) const {
 auto &Cube::Rotate::GetOrder() {
   static std::vector<std::vector<SIDE>> order = {
       //UP, DOWN, LEFT, RIGHT, FRONT, BACK
-      {BACK, FRONT, LEFT, RIGHT, UP, DOWN},
-      {FRONT, BACK, LEFT, RIGHT, DOWN, UP},
-      {UP, DOWN, BACK, FRONT, LEFT, RIGHT},
-      {UP, DOWN, FRONT, BACK, RIGHT, LEFT},
+      {BACK, FRONT, LEFT, RIGHT, UP, DOWN}, // UP
+      {FRONT, BACK, LEFT, RIGHT, DOWN, UP}, // DOWN
+      {UP, DOWN, BACK, FRONT, LEFT, RIGHT}, // LEFT
+      {UP, DOWN, FRONT, BACK, RIGHT, LEFT}, // RIGHT
   };
   return order;
 }
+auto &Cube::Rotate::GetRotate() {
+  static std::vector<std::vector<int>> rotate = {
+      //UP, DOWN, LEFT, RIGHT, FRONT, BACK
+      {0, 2, 1, 3, 0, 2}, // UP
+      {2, 0, 3, 1, 0, 2}, // DOWN
+      {3, 1, 0, 0, 0, 0}, // LEFT
+      {1, 3, 0, 0, 0, 0} // RIGHT
+  };
+  return rotate;
+}
+
 const Cube::IAction &Cube::Rotate::operator()(Cube &cube) const {
+  for (size_t i = 0; i != 6; i++)
+    for (size_t j = 0; j != GetRotate()[type_][i]; j++)
+      cube.sides[i].rotate();
+
   std::vector<Side> t;
   for (auto &side : GetOrder()[type_])
     t.emplace_back(cube.sides[side]);

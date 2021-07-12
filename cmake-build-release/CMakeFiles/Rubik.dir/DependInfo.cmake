@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles/Rubik.dir/Cube/Cube.cpp.o"
   "/home/rasl/ITMO_Projects/Rubik/Cube/Side.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles/Rubik.dir/Cube/Side.cpp.o"
   "/home/rasl/ITMO_Projects/Rubik/Random.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles/Rubik.dir/Random.cpp.o"
+  "/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o"
   "/home/rasl/ITMO_Projects/Rubik/main.cpp" "/home/rasl/ITMO_Projects/Rubik/cmake-build-release/CMakeFiles/Rubik.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

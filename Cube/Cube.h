@@ -10,7 +10,7 @@ class Cube {
  public:
 
   explicit Cube(size_t = 3);
-  explicit Cube(std::vector<Side> &);
+  Cube(size_t, std::vector<Side>);
 
   class IAction;
 
@@ -109,6 +109,7 @@ class Cube::Rotate : public IAction {
   SIDE type_{};
 
   static auto &GetOrder();
+  static auto &GetRotate();
 };
 
 class Cube::Skip : public IAction {
