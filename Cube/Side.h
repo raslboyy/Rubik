@@ -29,6 +29,8 @@ class Side {
   [[nodiscard]] size_t n() const { return n_; }
   [[nodiscard]] unsigned count_without(byte) const;
 
+  enum SIDE : size_t { UP = 0, DOWN, LEFT, RIGHT, FRONT, BACK };
+
   friend std::ostream &operator<<(std::ostream &, const Side &);
 //  friend std::istream &operator>>(std::istream &is, Side &s);
  private:

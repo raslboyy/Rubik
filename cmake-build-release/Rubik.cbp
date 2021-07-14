@@ -82,10 +82,46 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/IAction.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/IAction.h">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/Move.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/Move.h">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/Rotate.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/Rotate.h">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/Scramble.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/Scramble.h">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/Skip.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Action/Skip.h">
+			<Option target="Rubik"/>
+		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp">
 			<Option target="Rubik"/>
 		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Model3D.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Model3D.h">
 			<Option target="Rubik"/>
 		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Cube/Side.cpp">

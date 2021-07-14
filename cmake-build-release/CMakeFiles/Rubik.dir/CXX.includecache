@@ -6,17 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/rasl/ITMO_Projects/Rubik/Cube/Cube.cpp
-Cube.h
-/home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
-sstream
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/IAction.h
+string
 -
-algorithm
+
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/Move.h
+IAction.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/IAction.h
+../Side.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Side.h
+
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/Scramble.h
+memory
 -
-ctime
+vector
 -
-../Random.h
-/home/rasl/ITMO_Projects/Rubik/Random.h
+IAction.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/IAction.h
 
 /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
 vector
@@ -27,6 +33,12 @@ memory
 -
 Side.h
 /home/rasl/ITMO_Projects/Rubik/Cube/Side.h
+Action/IAction.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/IAction.h
+Action/Scramble.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/Scramble.h
+Action/Move.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/Move.h
 ../Random.h
 /home/rasl/ITMO_Projects/Rubik/Random.h
 
@@ -39,10 +51,6 @@ iostream
 -
 memory
 -
-
-/home/rasl/ITMO_Projects/Rubik/Random.cpp
-Random.h
-/home/rasl/ITMO_Projects/Rubik/Random.h
 
 /home/rasl/ITMO_Projects/Rubik/Random.h
 random
@@ -71,8 +79,12 @@ string
 -
 array
 -
+list
+-
 ../Cube/Cube.h
 /home/rasl/ITMO_Projects/Rubik/Cube/Cube.h
+../Cube/Action/Scramble.h
+/home/rasl/ITMO_Projects/Rubik/Cube/Action/Scramble.h
 
 /home/rasl/ITMO_Projects/Rubik/main.cpp
 iostream

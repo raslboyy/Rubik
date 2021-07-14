@@ -142,6 +142,141 @@ Rubik/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/build
 .PHONY : Rubik/fast
 
+Cube/Action/IAction.o: Cube/Action/IAction.cpp.o
+
+.PHONY : Cube/Action/IAction.o
+
+# target to build an object file
+Cube/Action/IAction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/IAction.cpp.o
+.PHONY : Cube/Action/IAction.cpp.o
+
+Cube/Action/IAction.i: Cube/Action/IAction.cpp.i
+
+.PHONY : Cube/Action/IAction.i
+
+# target to preprocess a source file
+Cube/Action/IAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/IAction.cpp.i
+.PHONY : Cube/Action/IAction.cpp.i
+
+Cube/Action/IAction.s: Cube/Action/IAction.cpp.s
+
+.PHONY : Cube/Action/IAction.s
+
+# target to generate assembly for a file
+Cube/Action/IAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/IAction.cpp.s
+.PHONY : Cube/Action/IAction.cpp.s
+
+Cube/Action/Move.o: Cube/Action/Move.cpp.o
+
+.PHONY : Cube/Action/Move.o
+
+# target to build an object file
+Cube/Action/Move.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Move.cpp.o
+.PHONY : Cube/Action/Move.cpp.o
+
+Cube/Action/Move.i: Cube/Action/Move.cpp.i
+
+.PHONY : Cube/Action/Move.i
+
+# target to preprocess a source file
+Cube/Action/Move.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Move.cpp.i
+.PHONY : Cube/Action/Move.cpp.i
+
+Cube/Action/Move.s: Cube/Action/Move.cpp.s
+
+.PHONY : Cube/Action/Move.s
+
+# target to generate assembly for a file
+Cube/Action/Move.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Move.cpp.s
+.PHONY : Cube/Action/Move.cpp.s
+
+Cube/Action/Rotate.o: Cube/Action/Rotate.cpp.o
+
+.PHONY : Cube/Action/Rotate.o
+
+# target to build an object file
+Cube/Action/Rotate.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Rotate.cpp.o
+.PHONY : Cube/Action/Rotate.cpp.o
+
+Cube/Action/Rotate.i: Cube/Action/Rotate.cpp.i
+
+.PHONY : Cube/Action/Rotate.i
+
+# target to preprocess a source file
+Cube/Action/Rotate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Rotate.cpp.i
+.PHONY : Cube/Action/Rotate.cpp.i
+
+Cube/Action/Rotate.s: Cube/Action/Rotate.cpp.s
+
+.PHONY : Cube/Action/Rotate.s
+
+# target to generate assembly for a file
+Cube/Action/Rotate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Rotate.cpp.s
+.PHONY : Cube/Action/Rotate.cpp.s
+
+Cube/Action/Scramble.o: Cube/Action/Scramble.cpp.o
+
+.PHONY : Cube/Action/Scramble.o
+
+# target to build an object file
+Cube/Action/Scramble.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Scramble.cpp.o
+.PHONY : Cube/Action/Scramble.cpp.o
+
+Cube/Action/Scramble.i: Cube/Action/Scramble.cpp.i
+
+.PHONY : Cube/Action/Scramble.i
+
+# target to preprocess a source file
+Cube/Action/Scramble.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Scramble.cpp.i
+.PHONY : Cube/Action/Scramble.cpp.i
+
+Cube/Action/Scramble.s: Cube/Action/Scramble.cpp.s
+
+.PHONY : Cube/Action/Scramble.s
+
+# target to generate assembly for a file
+Cube/Action/Scramble.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Scramble.cpp.s
+.PHONY : Cube/Action/Scramble.cpp.s
+
+Cube/Action/Skip.o: Cube/Action/Skip.cpp.o
+
+.PHONY : Cube/Action/Skip.o
+
+# target to build an object file
+Cube/Action/Skip.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Skip.cpp.o
+.PHONY : Cube/Action/Skip.cpp.o
+
+Cube/Action/Skip.i: Cube/Action/Skip.cpp.i
+
+.PHONY : Cube/Action/Skip.i
+
+# target to preprocess a source file
+Cube/Action/Skip.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Skip.cpp.i
+.PHONY : Cube/Action/Skip.cpp.i
+
+Cube/Action/Skip.s: Cube/Action/Skip.cpp.s
+
+.PHONY : Cube/Action/Skip.s
+
+# target to generate assembly for a file
+Cube/Action/Skip.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Action/Skip.cpp.s
+.PHONY : Cube/Action/Skip.cpp.s
+
 Cube/Cube.o: Cube/Cube.cpp.o
 
 .PHONY : Cube/Cube.o
@@ -168,6 +303,33 @@ Cube/Cube.s: Cube/Cube.cpp.s
 Cube/Cube.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Cube.cpp.s
 .PHONY : Cube/Cube.cpp.s
+
+Cube/Model3D.o: Cube/Model3D.cpp.o
+
+.PHONY : Cube/Model3D.o
+
+# target to build an object file
+Cube/Model3D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Model3D.cpp.o
+.PHONY : Cube/Model3D.cpp.o
+
+Cube/Model3D.i: Cube/Model3D.cpp.i
+
+.PHONY : Cube/Model3D.i
+
+# target to preprocess a source file
+Cube/Model3D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Model3D.cpp.i
+.PHONY : Cube/Model3D.cpp.i
+
+Cube/Model3D.s: Cube/Model3D.cpp.s
+
+.PHONY : Cube/Model3D.s
+
+# target to generate assembly for a file
+Cube/Model3D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Rubik.dir/build.make CMakeFiles/Rubik.dir/Cube/Model3D.cpp.s
+.PHONY : Cube/Model3D.cpp.s
 
 Cube/Side.o: Cube/Side.cpp.o
 
@@ -286,9 +448,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Rubik"
+	@echo "... Cube/Action/IAction.o"
+	@echo "... Cube/Action/IAction.i"
+	@echo "... Cube/Action/IAction.s"
+	@echo "... Cube/Action/Move.o"
+	@echo "... Cube/Action/Move.i"
+	@echo "... Cube/Action/Move.s"
+	@echo "... Cube/Action/Rotate.o"
+	@echo "... Cube/Action/Rotate.i"
+	@echo "... Cube/Action/Rotate.s"
+	@echo "... Cube/Action/Scramble.o"
+	@echo "... Cube/Action/Scramble.i"
+	@echo "... Cube/Action/Scramble.s"
+	@echo "... Cube/Action/Skip.o"
+	@echo "... Cube/Action/Skip.i"
+	@echo "... Cube/Action/Skip.s"
 	@echo "... Cube/Cube.o"
 	@echo "... Cube/Cube.i"
 	@echo "... Cube/Cube.s"
+	@echo "... Cube/Model3D.o"
+	@echo "... Cube/Model3D.i"
+	@echo "... Cube/Model3D.s"
 	@echo "... Cube/Side.o"
 	@echo "... Cube/Side.i"
 	@echo "... Cube/Side.s"
