@@ -42,11 +42,47 @@ CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Cube/Cube.h
 CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Cube/Side.h
 CMakeFiles/Rubik.dir/Cube/Cube.cpp.o: ../Random.h
 
+CMakeFiles/Rubik.dir/Cube/Model3D.cpp.o: ../Cube/Model3D.cpp
+CMakeFiles/Rubik.dir/Cube/Model3D.cpp.o: ../Cube/Model3D.h
+CMakeFiles/Rubik.dir/Cube/Model3D.cpp.o: ../Cube/Side.h
+
 CMakeFiles/Rubik.dir/Cube/Side.cpp.o: ../Cube/Side.cpp
 CMakeFiles/Rubik.dir/Cube/Side.cpp.o: ../Cube/Side.h
 
 CMakeFiles/Rubik.dir/Random.cpp.o: ../Random.cpp
 CMakeFiles/Rubik.dir/Random.cpp.o: ../Random.h
+
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../Cube/Action/IAction.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../Cube/Action/Move.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../Cube/Action/Scramble.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../Cube/Cube.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../Cube/Side.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../Random.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../genetic_algorithm/CFitness.cpp
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../genetic_algorithm/CFitness.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CFitness.cpp.o: ../genetic_algorithm/genetic_algorithm.h
+
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../Cube/Action/IAction.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../Cube/Action/Move.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../Cube/Action/Scramble.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../Cube/Cube.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../Cube/Side.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../Random.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../genetic_algorithm/CFitness.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../genetic_algorithm/CGeneration.cpp
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../genetic_algorithm/CGeneration.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../genetic_algorithm/Gene.h
+CMakeFiles/Rubik.dir/genetic_algorithm/CGeneration.cpp.o: ../genetic_algorithm/genetic_algorithm.h
+
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../Cube/Action/IAction.h
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../Cube/Action/Move.h
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../Cube/Action/Scramble.h
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../Cube/Cube.h
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../Cube/Side.h
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../Random.h
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../genetic_algorithm/Gene.cpp
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../genetic_algorithm/Gene.h
+CMakeFiles/Rubik.dir/genetic_algorithm/Gene.cpp.o: ../genetic_algorithm/genetic_algorithm.h
 
 CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Action/IAction.h
 CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Action/Move.h
@@ -54,6 +90,9 @@ CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Action/S
 CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Cube.h
 CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Cube/Side.h
 CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../Random.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/CFitness.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/CGeneration.h
+CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/Gene.h
 CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/genetic_algorithm.cpp
 CMakeFiles/Rubik.dir/genetic_algorithm/genetic_algorithm.cpp.o: ../genetic_algorithm/genetic_algorithm.h
 

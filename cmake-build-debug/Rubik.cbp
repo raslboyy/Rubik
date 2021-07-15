@@ -136,6 +136,24 @@
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/Random.h">
 			<Option target="Rubik"/>
 		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/CFitness.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/CFitness.h">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/CGene.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/CGene.h">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/CGeneration.cpp">
+			<Option target="Rubik"/>
+		</Unit>
+		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/CGeneration.h">
+			<Option target="Rubik"/>
+		</Unit>
 		<Unit filename="/home/rasl/ITMO_Projects/Rubik/genetic_algorithm/genetic_algorithm.cpp">
 			<Option target="Rubik"/>
 		</Unit>

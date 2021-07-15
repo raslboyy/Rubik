@@ -6,9 +6,11 @@
 
 using namespace std;
 
-void foo(const int &t = 1) {
-  cout << t;
-}
+template<size_t N = 10>
+struct A{
+  A() : n(N) {}
+  int n;
+};
 
 int main() {
 
@@ -37,6 +39,8 @@ int main() {
 //  a.apply_scramble("0 1 2 3");
 //  cout << a;
   genetic_algorithm::solve(a);
+  int k = 14;
+  A<k> aa;
 
   return 0;
 }

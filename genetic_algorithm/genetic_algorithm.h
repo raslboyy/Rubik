@@ -16,8 +16,7 @@ class genetic_algorithm {
   genetic_algorithm(const genetic_algorithm &) = delete;
   genetic_algorithm &operator=(const genetic_algorithm &) = delete;
 
-  template<typename FitnessFunc>
-  class Gene;
+  class CGene;
   class Parameters{
    public:
     explicit Parameters(size_t = 5,
@@ -64,72 +63,5 @@ class genetic_algorithm {
  private:
 
   class CFitness;
-  template<typename FitnessFunc>
   class CGeneration;
 };
-
-class genetic_algorithm::CFitness {
- public:
-  CFitness(size_t n, size_t pow);
-
-  unsigned operator()(const Cube &) const;
- private:
-  std::vector<std::vector<std::vector<unsigned>>> fitness;
-};
-
-template<typename FitnessFunc>
-class genetic_algorithm::CGeneration {
- public:
-  explicit CGeneration(const Cube &, const Parameters &, const CFitness &);
-
-  void update();
-  void reset();
-  [[nodiscard]] bool check() const;
-  [[nodiscard]] unsigned best_fitness() const;
- private:
-  std::vector<Gene<FitnessFunc>> genes;
-  Cube cube;
-  Parameters parameters;
-  CFitness fitness_function;
-
-  void mutation();
-  void selection();
-  void elitism();
-  void crossover();
-};
-
-template<typename FitnessFunc>
-class genetic_algorithm::Gene {
- public:
-  explicit Gene(const Cube &, FitnessFunc);
-  explicit Gene(const Cube &, const Scramble &, FitnessFunc);
-
-  Gene(const Gene &other) = default;
-  Gene &operator=(const Gene &other) = default;
-
-  void mutation(size_t n);
-
-  [[nodiscard]] size_t len() const { return allele.len(); }
-  [[nodiscard]] unsigned fitness() const;
-
-  template<typename T>
-  friend bool operator<(const Gene<T> &gene1, const Gene<T> &gene2);
-  template<typename T>
-  friend bool operator>(const Gene<T> &gene1, const Gene<T> &gene2);
-  template<typename T>
-  friend bool operator<=(const Gene<T> &gene1, const Gene<T> &gene2);
-  template<typename T>
-  friend bool operator>=(const Gene<T> &gene1, const Gene<T> &gene2);
-  template<typename T>
-  friend bool operator==(const Gene<T> &gene1, const Gene<T> &gene2);
-  template<typename T>
-  friend bool operator!=(const Gene<T> &gene1, const Gene<T> &gene2);
- private:
-  Scramble allele;
-  Cube cube;
-  bool fitness_is_valid;
-  unsigned fitness_;
-  std::list<unsigned> fitness_history;
-  FitnessFunc fitness_function;
-};
-
